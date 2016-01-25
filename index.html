@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+<meta charset="utf-8"/>
+
+<!--   Scripts   -->
+<script src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/pace.js"></script>
+<script type="text/javascript" src="scripts/response.js"></script>
+<script type="text/javascript" src="scripts/jscolor.js"></script>
+<script type="text/javascript" src="scripts/colorScripts.js"></script>
+<script type="text/javascript" src="scripts/colorObjects.js"></script>
+
+<!--   Styles   -->
+<link rel="stylesheet" type="text/css" href="styles/pace.css"/>
+<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="styles/base.css" />
+<link rel="stylesheet" type="text/css" href="styles/global.css" />
+<link rel="stylesheet" type="text/css" href="styles/response.css" />
+
+<!--   Tab Info   -->
+<title>Color Suite :: Single Page App Design</title>
+<link rel="shortcut icon" href="images/paint.ico" >
+	
+</head>
+
+<body>
+	<!--   Begin Navigation   -->
+	<div id="nav">
+		<ul id="navLeft">
+			<li><img src="images/bucket2.png" alt="WDCS"></li>
+			<li class="navLeft"><p class="pacifico">WebDesign<span class="segoeL">ColorSuite</span></p></li>
+		</ul>
+		<ul id="navRight">
+			<li class="trans2 nevis">CONTACT</li>
+			<li class="trans2 nevis">TOOLS</li>
+			<li class="trans2 nevis">ABOUT</li>
+		</ul>
+		<ul id="hamenu">
+			<li class="trans1"></li>
+		</ul>
+	</div>
+	<!--   End Navigation   -->
+
+	<!--   Begin Navigation Bodies   -->
+	<div id="menu">
+		<ul id="full">
+			<li class="fullMenu" id="contactFull">
+				<p class="segoeL"><span class="nevis">SID:</span> ajcurnu</p>
+				<p class="segoeL"><span class="nevis">EMAIL:</span> <a href="mailto:ajcurnu@nsa.ic.gov">ajcurnu@nsa.ic.gov</a></p>
+				<p class="segoeL"><span class="nevis">TELEPHONE: </span> <span>U</span>443.654.1299 | <span>NSTS</span>969.0939</p>
+			</li>
+			<li class="fullMenu" id="toolsFull">
+				<div id="toolMenu">
+					<ul class="segoeL">
+						<li value="#tab7" class="active trans2">Dynamic Color Selector &nbsp;</li>
+						<li value="#tab8" class="trans2">Custom Color Palletes &nbsp;</li>
+						<li value="#tab9" class="trans2">Color Code Converter &nbsp;</li>
+						<li value="#tab10" class="trans2">Creative Color Palette &nbsp;</li>
+					</ul>
+				</div>
+				<div id="toolDesc">
+					<div id="tab7" class="active">
+						<img src="images/primary.png" alt="Dynamic">
+						<p>The Dynamic Color Selector is a custom element that allows a developer to locate any color of the rainbow and return the hexadecimal equivalent for styling and markup.</p>
+					</div>
+					<div id="tab8">
+						<img src="images/palette.png" alt="Palette">
+						<p>The Custom Color Palette displays a collection of imported palettes for use when choosing single or multiple colors. &nbsp; Each palette will display a color preview and the hexadecimal equivalent for styling and markup.</p>
+					</div>
+					<div id="tab9">
+						<img src="images/arrows.png" alt="Convert">
+						<p>The Color Code Converter allows a developer to convert hexadecimal color values to and from decimal (red, green, blue) quickly and efficently. &nbsp; Returned color values can be immediately used for styling and markup.</p>
+					</div>
+					<div id="tab10">
+						<img src="images/creative.png" alt="Creative">
+						<p>The Creative Color Palette allows a developer to dynamically create color palettes on the fly or quickly edit one of the many custom color palette presets included.</p>
+					</div>
+				</div>
+			</li>
+			<li class="fullMenu" id="aboutFull">
+				<p class="segoeL"><span class="nevis">VERSION:</span> 2.1</p>
+				<p class="segoeL"><span class="nevis">DESIGNED &amp; DEVELOPED:</span> Alden J. Curnutt</p>
+				<p class="segoeL"><span class="nevis">PURPOSE:</span> To provide a set of practical color management tools, in one place, for front end development</p>
+			</li>
+		</ul>
+	</div>
+
+	<div id="compactMenu">
+		<ul id="min">
+			<!-- Minified About -->
+			<li id="aboutMin" class="minTitle">
+				<p class="nevis">ABOUT</p>
+			</li>
+			<li id="aboutExpand" class="minExpand">
+				<br><br><p class="segoeL"><span class="nevis">VERSION:</span> 2.1</p>
+				<p class="segoeL"><span class="nevis">DESIGNED &amp; DEVELOPED:</span> Alden J. Curnutt</p>
+				<p class="segoeL"><span class="nevis">PURPOSE:</span> To provide a set of practical color management tools, in one place, for front end development</p>
+			</li>
+
+			<li id="contactMin" class="minTitle">
+				<P class="nevis">CONTACT</P>
+			</li>
+			<li id="contactExpand" class="minExpand">
+				<br><br><p class="segoeL"><span class="nevis">SID:</span> ajcurnu</p>
+				<p class="segoeL"><span class="nevis">EMAIL:</span> <a href="mailto:ajcurnu@nsa.ic.gov">ajcurnu@nsa.ic.gov</a></p>
+				<p class="segoeL"><span class="nevis">TELEPHONE: </span> <span>U</span>443.654.1299 | <span>NSTS</span>969.0939</p>
+			</li>
+		</ul>
+	</div>
+	<!--   End Navigation Bodies   -->
+
+	<!--   Begin Color Suite Body   -->
+	<div id="bodyWrap">
+		<div id="tabWrap">
+			<ul class="nevis">
+				<li value="#tab1" class="active trans3" title="Dynamic Color Selector"><p class="trans2">DYNAMIC</p></li>
+				<li value="#tab2" class="trans3" title="Custom Color Palettes"><p class="trans2">PALETTE</p></li>
+				<li value="#tab3" class="trans3" title="Color Code Converter"><p class="trans2">CONVERT</p></li>
+				<li value="#tab4" class="trans3" title="Creative Color Palette"><p class="trans2">CREATIVE</p></li>
+			</ul>
+		</div>
+
+		<div id="contentWrap">
+			<div id="tab1" class="content active">
+				<div id="inputDiv">
+					<input id="myColor" class="color {pickerClosable:true} segoe" value="#E1E6E6">
+					<p class="segoe">Dynamic Color Palette</p>
+				</div><br><br>
+			</div><!-- End tab1 div -->
+
+			<div id="tab2" class="content">
+				<div id="selector">
+					<select class="segoe" id="colorSelect" onchange="palette.select()">
+						<option selected="selected">Select a color palette!</option>
+						<option>See All Color Palettes</option>
+					</select>
+				</div>
+				<table id="paletteTable" align="center"></table>
+			</div><!-- End tab2 div -->
+			
+			<div id="tab3" class="content">
+				<div id="convertWrap">
+					<div id="convertChoice">
+						<ul class="segoe">
+							<li value="#tab5" class="active toRgb trans2">RGB | HEX</li>
+							<li value="#tab6" class="toHex trans2">HEX | RGB</li>
+						</ul>
+					</div><!-- End convertChoice div -->
+
+					<div id="convertBody">
+						<div class="body active" id="tab5">
+							<table>
+								<tr class="height">
+									<td class="title nevis">INPUT</td>
+									<td class="spacer"></td>
+									<td class="title nevis">OUTPUT</td>
+								</tr>
+								<tr>
+									<td class="height">
+										<input type="search"  id="rToHex" maxlength="3" placeholder=" Red: 0 - 255" class="input segoe inputShadow" />
+									</td>
+									<td class="height" rowspan="3"></td>
+									<td id="HEXPreview" class="height preview segoeL" rowspan="3"></td>
+								</tr>
+								<tr>
+									<td class="height">
+										<input type="search" id="gToHex" maxlength="3" placeholder=" Green: 0 - 255" class="input segoe inputShadow" />
+									</td>
+								</tr>
+								<tr>
+									<td class="height">
+										<input type="search"  id="bToHex" maxlength="3" placeholder=" Blue 0 - 255" class="input segoe inputShadow" />
+									</td>
+								</tr>				
+								<tr>
+									<td class="height" colspan="3">
+										<div class="button trans2" onclick="convert.toHex()">
+											<p>Convert</p>
+										</div>						
+									</td>
+								</tr>
+								<tr>
+									<td class="height" colspan="3">
+										<div id="toHexCreative" class="dynamic trans2" onclick="dynamic.single('hex')">
+											<p>Modify</p>
+										</div>						
+									</td>
+								</tr>						
+							</table>
+						</div><!-- End tab4 div -->
+
+						<div class="body" id="tab6">
+							<table>
+								<tr class="height">
+									<td class="title nevis">INPUT</td>
+									<td class="spacer"></td>
+									<td class="title nevis">OUTPUT</td>
+								</tr>
+								<tr>
+									<td class="height"></td>
+									<td class="height" rowspan="3"></td>
+									<td id="RGBPreview" class="height preview segoeL" rowspan="3"></td>
+								</tr>
+								<tr>
+									<td class="height">
+										<input type="search"  id="toRgbInput" maxlength="7" placeholder=" HEX: 0-9 &amp; A-F" class="input segoe inputShadow" />
+									</td>
+								</tr>
+								<tr>
+									<td class="height"></td>
+								</tr>				
+								<tr>
+									<td class="height" colspan="3">
+										<div class="button trans2" onclick="convert.toRgb()">
+											<p>Convert</p>
+										</div>							
+									</td>
+								</tr>
+								<tr>
+									<td class="height" colspan="3">
+										<!--<div id="toRgbCreative" class="dynamic trans3" onclick="tabs.activate('#tab1')">-->
+										<div id="toRgbCreative" class="dynamic trans2" onclick="dynamic.single('rgb')">
+											<p>Modify</p>
+										</div>							
+									</td>
+								</tr>					
+							</table>
+						</div><!-- End tab5 div -->
+					</div><!-- End convertBody div -->
+				</div><!-- End convertWrap div -->
+			</div><!-- End tab3 div -->
+			
+			<div id="tab4" class="content">
+				<div id="creativeWrap">
+					<div id="inputWrap">
+						<input class="color {pickerClosable:true} segoe" id="color1" value="#ED1C24"></input>
+						<input class="color {pickerClosable:true} segoe" id="color2" value="#683371"></input>
+						<input class="color {pickerClosable:true} segoe" id="color3" value="#21409A"></input>
+						<input class="color {pickerClosable:true} segoe" id="color4" value="#269939"></input>
+						<input class="color {pickerClosable:true} segoe" id="color5" value="#FFF200"></input>
+						<p class="creativeTitle">Creative Palette: <span>Default</span></p>
+						<div id="creativeReset" class="trans2 segoe">Creative Palette Reset</div>
+					</div>
+				</div>
+			</div><!-- End tab4 div -->
+		</div>	
+	</div>
+	<!-- End Color Suite Body -->
+</body>
+
+</html>
