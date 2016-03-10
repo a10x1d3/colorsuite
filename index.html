@@ -1,29 +1,30 @@
-
 <!DOCTYPE html>
-<html>
+<html ng-app="colorApp">
 <head>
 	
 <meta charset="utf-8"/>
 
 <!--   Scripts   -->
-<script src="scripts/jquery.js"></script>
-<script type="text/javascript" src="scripts/pace.js"></script>
-<script type="text/javascript" src="scripts/response.js"></script>
-<script type="text/javascript" src="scripts/jscolor.js"></script>
-<script type="text/javascript" src="scripts/colorScripts.js"></script>
-<script type="text/javascript" src="scripts/colorObjects.js"></script>
+<script src="assets/scripts/jquery.js"></script>
+<script type="text/javascript" src="assets/scripts/pace.js"></script>
+<script type="text/javascript" src="assets/scripts/angular.js"></script>
+<script type="text/javascript" src="assets/scripts/app.js"></script>
+<script type="text/javascript" src="assets/scripts/response.js"></script>
+<script type="text/javascript" src="assets/scripts/jscolor.js"></script>
+<script type="text/javascript" src="assets/scripts/colorScripts.js"></script>
+<script type="text/javascript" src="assets/scripts/colorObjects.js"></script>
 
 <!--   Styles   -->
-<link rel="stylesheet" type="text/css" href="styles/pace.css"/>
-<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="styles/base.css" />
-<link rel="stylesheet" type="text/css" href="styles/global.css" />
-<link rel="stylesheet" type="text/css" href="styles/response.css" />
+<link rel="stylesheet" type="text/css" href="assets/styles/pace.css"/>
+
+<link type="text/css" rel="stylesheet" href="assets/styles/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="assets/styles/base.css" />
+<link rel="stylesheet" type="text/css" href="assets/styles/app.css" />
+<link rel="stylesheet" type="text/css" href="assets/styles/response.css" />
 
 <!--   Tab Info   -->
 <title>Color Suite :: Single Page App Design</title>
-<link rel="shortcut icon" href="images/paint.ico" >
+<link rel="shortcut icon" href="assets/images/paint.ico" >
 	
 </head>
 
@@ -31,8 +32,7 @@
 	<!--   Begin Navigation   -->
 	<div id="nav">
 		<ul id="navLeft">
-			<li><img src="images/bucket2.png" alt="WDCS"></li>
-			<li class="navLeft"><p class="pacifico">WebDesign<span class="segoeL">ColorSuite</span></p></li>
+			<li class="navLeft"><i class="fa fa-paint-brush"></i><span class="tred"> WebDesign</span><span>ColorSuite</span></li>
 		</ul>
 		<ul id="navRight">
 			<li class="trans2 nevis">CONTACT</li>
@@ -40,51 +40,36 @@
 			<li class="trans2 nevis">ABOUT</li>
 		</ul>
 		<ul id="hamenu">
-			<li class="trans1"></li>
+			<li class="trans1"><i class="fa fa-navicon trans2"></i></li>
 		</ul>
 	</div>
 	<!--   End Navigation   -->
 
 	<!--   Begin Navigation Bodies   -->
-	<div id="menu">
+	<div id="menu" ng-controller="Menu">
 		<ul id="full">
 			<li class="fullMenu" id="contactFull">
-				<p class="segoeL"><span class="nevis">SID:</span> ajcurnu</p>
-				<p class="segoeL"><span class="nevis">EMAIL:</span> <a href="mailto:ajcurnu@nsa.ic.gov">ajcurnu@nsa.ic.gov</a></p>
-				<p class="segoeL"><span class="nevis">TELEPHONE: </span> <span>U</span>443.654.1299 | <span>NSTS</span>969.0939</p>
+				<p class="segoeL"><span class="nevis">EMAIL:</span> <a href="{{ config.contact.email }}">{{ config.contact.email }}</a></p>
+				<p class="segoeL"><span class="nevis">WORK:</span> {{ config.contact.work }}</p>
+				<p class="segoeL"><span class="nevis">CELL: </span> {{ config.contact.cell }}</p>
 			</li>
 			<li class="fullMenu" id="toolsFull">
 				<div id="toolMenu">
 					<ul class="segoeL">
-						<li value="#tab7" class="active trans2">Dynamic Color Selector &nbsp;</li>
-						<li value="#tab8" class="trans2">Custom Color Palletes &nbsp;</li>
-						<li value="#tab9" class="trans2">Color Code Converter &nbsp;</li>
-						<li value="#tab10" class="trans2">Creative Color Palette &nbsp;</li>
+						<li ng-repeat="tool in tools" class="{{ tool.class }}" value="{{ '#' + tool.tabVal }}">{{ tool.name }} <i class="fa fa-chevron-right p-r-10"></i></li>
 					</ul>
 				</div>
 				<div id="toolDesc">
-					<div id="tab7" class="active">
-						<img src="images/primary.png" alt="Dynamic">
-						<p>The Dynamic Color Selector is a custom element that allows a developer to locate any color of the rainbow and return the hexadecimal equivalent for styling and markup.</p>
-					</div>
-					<div id="tab8">
-						<img src="images/palette.png" alt="Palette">
-						<p>The Custom Color Palette displays a collection of imported palettes for use when choosing single or multiple colors. &nbsp; Each palette will display a color preview and the hexadecimal equivalent for styling and markup.</p>
-					</div>
-					<div id="tab9">
-						<img src="images/arrows.png" alt="Convert">
-						<p>The Color Code Converter allows a developer to convert hexadecimal color values to and from decimal (red, green, blue) quickly and efficently. &nbsp; Returned color values can be immediately used for styling and markup.</p>
-					</div>
-					<div id="tab10">
-						<img src="images/creative.png" alt="Creative">
-						<p>The Creative Color Palette allows a developer to dynamically create color palettes on the fly or quickly edit one of the many custom color palette presets included.</p>
+					<div ng-repeat="tool in tools" id="{{ tool.tabVal }}" class="{{ tool.class }}">
+						<img ng-src="{{ tool.image.src }}" alt="{{ tool.image.alt }}">
+						<p>{{ tool.desc }}</p>
 					</div>
 				</div>
 			</li>
 			<li class="fullMenu" id="aboutFull">
-				<p class="segoeL"><span class="nevis">VERSION:</span> 2.1</p>
-				<p class="segoeL"><span class="nevis">DESIGNED &amp; DEVELOPED:</span> Alden J. Curnutt</p>
-				<p class="segoeL"><span class="nevis">PURPOSE:</span> To provide a set of practical color management tools, in one place, for front end development</p>
+				<p class="segoeL"><span class="nevis">VERSION:</span> <span class="tred">{{ config.version }}</span></p>
+				<p class="segoeL"><span class="nevis">DESIGNED &amp; DEVELOPED:</span> {{ config.developer }}</p>
+				<p class="segoeL"><span class="nevis">PURPOSE:</span> {{ config.purpose }}</p>
 			</li>
 		</ul>
 	</div>
@@ -114,25 +99,22 @@
 	<!--   End Navigation Bodies   -->
 
 	<!--   Begin Color Suite Body   -->
-	<div id="bodyWrap">
+	<div id="bodyWrap" ng-controller="colorSuite">
 		<div id="tabWrap">
 			<ul class="nevis">
-				<li value="#tab1" class="active trans3" title="Dynamic Color Selector"><p class="trans2">DYNAMIC</p></li>
-				<li value="#tab2" class="trans3" title="Custom Color Palettes"><p class="trans2">PALETTE</p></li>
-				<li value="#tab3" class="trans3" title="Color Code Converter"><p class="trans2">CONVERT</p></li>
-				<li value="#tab4" class="trans3" title="Creative Color Palette"><p class="trans2">CREATIVE</p></li>
+				<li ng-repeat="tool in toolList" value="{{ '#' + tool.tabVal }}" class="{{ tool.class }} trans2" title="{{ tool.title }}">{{ tool.name | uppercase }}</li>
 			</ul>
 		</div>
 
 		<div id="contentWrap">
-			<div id="tab1" class="content active">
+			<div id="tool-dynamic" class="content active">
 				<div id="inputDiv">
 					<input id="myColor" class="color {pickerClosable:true} segoe" value="#E1E6E6">
 					<p class="segoe">Dynamic Color Palette</p>
 				</div><br><br>
 			</div><!-- End tab1 div -->
 
-			<div id="tab2" class="content">
+			<div id="tool-palette" class="content">
 				<div id="selector">
 					<select class="segoe" id="colorSelect" onchange="palette.select()">
 						<option selected="selected">Select a color palette!</option>
@@ -142,7 +124,7 @@
 				<table id="paletteTable" align="center"></table>
 			</div><!-- End tab2 div -->
 			
-			<div id="tab3" class="content">
+			<div id="tool-convert" class="content">
 				<div id="convertWrap">
 					<div id="convertChoice">
 						<ul class="segoe">
@@ -234,7 +216,7 @@
 				</div><!-- End convertWrap div -->
 			</div><!-- End tab3 div -->
 			
-			<div id="tab4" class="content">
+			<div id="tool-creative" class="content">
 				<div id="creativeWrap">
 					<div id="inputWrap">
 						<input class="color {pickerClosable:true} segoe" id="color1" value="#ED1C24"></input>
